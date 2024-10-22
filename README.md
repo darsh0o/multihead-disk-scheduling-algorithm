@@ -98,9 +98,6 @@ The logic behind this project is based on well-known disk scheduling algorithms 
 
 The research that inspired this project includes a study on multi-head disk scheduling systems, such as the **Optimized Two-Head Disk Scheduling Algorithm (OTHDSA)** developed by Singh, K., Rastogi, D., and Singh, D. (2015). Their work focuses on improving the performance of disk systems by reducing the total number of head movements, especially in multi-head disk configurations. The algorithms implemented in this project are a part of standard disk scheduling techniques, but the logic behind them is inspired by these advanced research efforts.
 
-### Research Paper Citation
-The concepts and optimization strategies used in this project are based on:
-- **Singh, K., Rastogi, D., & Singh, D.** (2015). *Optimized Two Head Disk Scheduling Algorithm (OTHDSA)*. 2015 Fifth International Conference on Advanced Computing & Communication Technologies. IEEE. DOI: 10.1109/ACCT.2015.70.
 
 ## Requirements
 
@@ -115,54 +112,12 @@ To install the necessary dependencies, run:
 pip install -r requirements.txt
 ```
 
-This will generate visual representations of the performance of each disk scheduling algorithm. The plots compare the total seek times across C-SCAN, SSTF, and Random Scan algorithms, showing which approach yields the lowest overall head movements based on the given I/O requests.
-
-The generated plots can help in analyzing the efficiency of different algorithms, giving insights into how they perform under various conditions. These plots can be especially useful when testing with different data sets of I/O requests.
-
-## Project Files
-
-- **`C-SCAN Disk Scheduling Algorithm.py`**: Implements the C-SCAN algorithm, where the disk head moves from one end of the disk to the other, servicing requests, and returns to the beginning without processing requests on the way back.
-- **`SSTF disk scheduling algorithm.py`**: Implements the Shortest Seek Time First (SSTF) algorithm, which selects the closest I/O request to the current head position.
-- **`Random SCAN Disk Scheduling Algorithms.py`**: Implements a randomized I/O request processing algorithm, where requests are served randomly without any specific optimization.
-- **`Plots.py`**: Generates comparative visual plots that display the total seek time for each disk scheduling algorithm.
-
-## Explanation of Algorithms
-
-### C-SCAN Algorithm
-C-SCAN is a variation of the SCAN disk scheduling algorithm. In C-SCAN, the disk head moves in one direction, servicing I/O requests as it goes. Once it reaches the far end of the disk, the head immediately returns to the start without servicing any requests on the return journey. This circular behavior ensures that all requests are treated uniformly, reducing the wait time variance compared to the SCAN algorithm.
-
-### SSTF Algorithm
-Shortest Seek Time First (SSTF) is an algorithm that selects the I/O request closest to the current head position. By servicing the nearest request, the SSTF algorithm reduces the seek time required for each operation. However, this method can lead to starvation, where distant requests are delayed indefinitely if there are always closer requests to process.
-
-### Random Scan Algorithm
-In the Random Scan algorithm, the disk head services I/O requests in random order, without considering their proximity to the current head position. This non-deterministic behavior often results in higher seek times and is primarily used for comparison against more structured algorithms like SSTF and C-SCAN.
-
-## Plots
-
-The `Plots.py` file provides a visual comparison of the total seek times for each algorithm. By running this script, you can observe how each algorithm performs with the same set of I/O requests and analyze which one minimizes disk head movements most effectively.
-
-## Research and Logic
-
-The logic behind this project is based on well-known disk scheduling algorithms that are commonly used in operating systems to optimize disk I/O performance. The primary goal of these algorithms is to reduce the seek time, which directly impacts the efficiency of data retrieval from storage devices.
-
-The research that inspired this project includes a study on multi-head disk scheduling systems, such as the **Optimized Two-Head Disk Scheduling Algorithm (OTHDSA)** developed by Singh, K., Rastogi, D., and Singh, D. (2015). Their work focuses on improving the performance of disk systems by reducing the total number of head movements, especially in multi-head disk configurations. The algorithms implemented in this project are a part of standard disk scheduling techniques, but the logic behind them is inspired by these advanced research efforts.
 
 ### Research Paper Citation
 The concepts and optimization strategies used in this project are based on:
 - **Singh, K., Rastogi, D., & Singh, D.** (2015). *Optimized Two Head Disk Scheduling Algorithm (OTHDSA)*. 2015 Fifth International Conference on Advanced Computing & Communication Technologies. IEEE. DOI: 10.1109/ACCT.2015.70.
 
-## Requirements
 
-This project requires the following Python libraries:
-
-- `matplotlib`: Used for generating the plots that compare the performance of different disk scheduling algorithms.
-- `numpy`: Required for numerical operations and data handling.
-- `random`: Used in the implementation of the Random Scan algorithm to simulate random I/O request servicing.
-
-To install the necessary dependencies, run:
-```bash
-pip install -r requirements.txt
-```
 
 ## References
 Singh, K., Rastogi, D., & Singh, D. (2015). Optimized Two Head Disk Scheduling Algorithm (OTHDSA). 2015 Fifth International Conference on Advanced Computing & Communication Technologies. IEEE. DOI: 10.1109/ACCT.2015.70.
